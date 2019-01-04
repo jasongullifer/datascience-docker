@@ -1,0 +1,22 @@
+version: "3"
+services:
+  ds-python:
+      image: jg-ds-python
+      volumes:
+        - //c/Users/Jason (local)/Desktop/work:/home/analyst
+      ports:
+        - "8888:8888"
+      container_name: ds-python-container
+      tty: true
+  ds-r:
+      image: jg-ds-r
+      environment:
+        - PASSWORD=letmein
+        - R_HOME=/home
+        - R_USER=/home
+      volumes:
+        - //c/Users/Jason (local)/Desktop/work:/home/analyst
+      ports:
+        - "28788:8787"
+      container_name: ds-r-container
+      tty: true
