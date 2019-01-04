@@ -1,0 +1,10 @@
+version: "3"
+services:
+  datascience:
+      image:            jasongullifer-datascience
+      volumes:
+        - //c/Users/Jason (local)/Desktop/work:/home
+      ports:
+        - "8888:8888"
+      container_name: datascience-container
+      tty: true
