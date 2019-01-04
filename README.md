@@ -4,21 +4,14 @@ A collection of dockerfiles to create images
 
 ## Example steps for building an image and running a container
 
-Enter one of the docker folders
+Build the docker images
 
-    cd datascience
-
-Build the docker image (datascience) from the docker file 
-
-    docker build -t jasongullifer-datascience -f ./DockerFile ./
+    docker build -t jg-ds-python -f ./ds-python/DockerFile ./
+    docker build -t jg-ds-r      -f ./ds-r/DockerFile      ./
     
-Run a container the compose file
+Run a containers the compose file
 
     docker-compose up
-
-The datascience container starts a jupyter notebook, you can enter the container and run bash 
-
-    docker exec jay_conatiner bash
 
 ## Other useful commands, mostly for my own reference
 
