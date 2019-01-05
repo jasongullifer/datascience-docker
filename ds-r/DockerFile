@@ -2,7 +2,7 @@ FROM rocker/tidyverse
 
 LABEL maintainer "Jason Gullifer <jason.gullifer@mail.mcgill.ca>"
 
-RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice Matrix devtools lmerTest
+RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice Matrix devtools lmerTest GGally
 
 RUN R -e "devtools::install_github('crsh/papaja')"
 RUN R -e "devtools::install_github('strengejacke/sjPlot')"
