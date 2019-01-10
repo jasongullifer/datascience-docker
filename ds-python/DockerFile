@@ -2,16 +2,6 @@ FROM continuumio/miniconda3
 
 LABEL maintainer "Jason Gullifer <jason.gullifer@mail.mcgill.ca>"
 
-# Install python packages
-RUN conda install \
-		jupyter \
-        pandas \ 
-        statsmodels \ 
-        matplotlib \ 
-        seaborn
-
-RUN conda install -c conda-forge xgboost
-
 ENV PATH /opt/conda/bin:$PATH
 
 # Expose port for jupyter
@@ -28,6 +18,16 @@ RUN useradd analyst \
   && echo "analyst:analyst" | chpasswd \
 	&& chown analyst:analyst /home/analyst \
 	&& addgroup analyst staff
+
+# Install python packages
+RUN conda install \
+		jupyter \
+        pandas \ 
+        statsmodels \ 
+        matplotlib \ 
+        seaborn
+
+RUN conda install -c conda-forge xgboost
 
 USER analyst 
 

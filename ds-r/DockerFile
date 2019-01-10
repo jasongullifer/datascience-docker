@@ -2,11 +2,6 @@ FROM rocker/tidyverse
 
 LABEL maintainer "Jason Gullifer <jason.gullifer@mail.mcgill.ca>"
 
-RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice Matrix devtools lmerTest GGally
-
-RUN R -e "devtools::install_github('crsh/papaja')"
-RUN R -e "devtools::install_github('strengejacke/sjPlot')"
-
 # Setup File System
 #RUN mkdir home/analyst
 ENV HOME=/home/analyst
@@ -18,3 +13,7 @@ RUN useradd analyst \
   && echo "analyst:analyst" | chpasswd \
 	&& chown analyst:analyst /home/analyst \
 	&& addgroup analyst staff
+	
+RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice Matrix devtools lmerTest GGally VWPre
+RUN R -e "devtools::install_github('crsh/papaja')"
+RUN R -e "devtools::install_github('strengejacke/sjPlot')"
