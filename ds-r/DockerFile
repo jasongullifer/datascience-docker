@@ -10,10 +10,13 @@ VOLUME /home/analyst
 WORKDIR /home/analyst
 
 RUN useradd analyst \
-  && echo "analyst:analyst" | chpasswd \
+  	&& echo "analyst:analyst" | chpasswd \
 	&& chown analyst:analyst /home/analyst \
 	&& addgroup analyst staff
 	
-RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice Matrix devtools lmerTest GGally VWPre
+RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice \
+	Matrix devtools lmerTest GGally VWPre plotfunctions ff \ 
+	data.table
+
 RUN R -e "devtools::install_github('crsh/papaja')"
 RUN R -e "devtools::install_github('strengejacke/sjPlot')"
