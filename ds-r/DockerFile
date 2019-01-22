@@ -17,6 +17,6 @@ RUN useradd analyst \
 RUN install2.r -e  bookdown rmarkdown knitr lme4 lattice \
 	Matrix devtools lmerTest GGally VWPre plotfunctions ff \ 
 	data.table tables effects factoextra MuMIn \
-	xgboost parallelMap Ckmeans.1d.dp DiagrammeR
+	xgboost mlr caret parallelMap Ckmeans.1d.dp DiagrammeR
 
 RUN R -e "devtools::install_github(c('crsh/papaja', 'strengejacke/sjPlot', 'jasongullifer/languageentropy', 'jasongullifer/convenience'))"

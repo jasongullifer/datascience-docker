@@ -3,7 +3,7 @@ services:
   ds-python:
       image: jg-ds-python
       volumes:
-        - ../:/home/analyst
+        - ../../../:/home/analyst
       ports:
         - "8888:8888"
       container_name: ds-python-container
@@ -15,7 +15,7 @@ services:
         - R_HOME=/home
         - R_USER=/home
       volumes:
-        - ../:/home/analyst
+        - ../../../:/home/analyst
       ports:
         - "28788:8787"
       container_name: ds-r-container
